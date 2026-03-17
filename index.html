@@ -113,14 +113,40 @@ if (getCookie("banned") === "true") {
     border-bottom: 2px solid #d4af37;
   }
 
+  .nav-brand-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+  }
+
   .nav-brand {
     color: #d4af37;
     font-weight: bold;
     letter-spacing: 1.5px;
     font-size: 1.4em;
-    margin-right: 40px;
     font-family: 'Playfair Display', serif;
     font-style: italic;
+    line-height: 1.1;
+  }
+
+  /* ===== NAV TAGLINE (fades after 12s, desktop only) ===== */
+  .nav-tagline {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
+    opacity: 1;
+    transition: opacity 5s ease;
+    white-space: nowrap;
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .nav-tagline.faded {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .nav-links {
@@ -228,19 +254,11 @@ if (getCookie("banned") === "true") {
     margin-bottom: 40px;
   }
 
+  /* ===== NEWS LAYOUT ===== */
   .news-item {
     display: flex;
-    gap: 40px;
+    gap: 28px;
     align-items: flex-start;
-  }
-
-  .news-image-box {
-    max-width: 400px;
-    flex: 1;
-  }
-
-  .news-image-box img {
-    cursor: pointer;
   }
 
   .news-text-box {
@@ -257,6 +275,31 @@ if (getCookie("banned") === "true") {
     font-style: italic;
     font-size: 1.8em;
     letter-spacing: 1px;
+  }
+
+  /* Desktop: right column with two stacked image boxes */
+  .news-images-desktop {
+    width: 380px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .news-images-desktop .news-image-box {
+    border: 3px solid #d4af37;
+    padding: 12px;
+    background: #000;
+    transition: box-shadow 0.4s ease;
+  }
+
+  .news-images-desktop .news-image-box:hover {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+  }
+
+  /* Mobile: single cycling image box — hidden on desktop */
+  .news-image-mobile {
+    display: none;
   }
 
   /* ===== PRODUCTS SECTION ===== */
@@ -409,6 +452,31 @@ if (getCookie("banned") === "true") {
     text-decoration: underline;
   }
 
+  /* ===== CONTACT US LINK ===== */
+  .contact-us-line {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: italic;
+    color: #d4af37;
+  }
+
+  .contact-us-line .colon {
+    font-weight: bold;
+  }
+
+  .contact-us-line a {
+    color: #c9a227;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .contact-us-line a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
   .footer-meta {
     text-align: right;
     white-space: nowrap;
@@ -508,8 +576,26 @@ if (getCookie("banned") === "true") {
     .product.reverse {
       margin-bottom: 24px;
     }
+
+    /* Mobile news images: hide stacked desktop pair, show single cycler */
+    .news-images-desktop {
+      display: none;
+    }
+
+    .news-image-mobile {
+      display: block;
+      width: 100%;
+      border: 3px solid #d4af37;
+      padding: 12px;
+      background: #000;
+      transition: box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .news-image-mobile:hover {
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+    }
     
-    .news-image-box,
     .image-box { 
       max-width: 100%; 
     }
@@ -566,10 +652,18 @@ if (getCookie("banned") === "true") {
       padding: 10px 0;
     }
 
-    .nav-brand {
+    .nav-brand-wrap {
+      align-items: center;
       margin-right: 0;
       margin-bottom: 3px;
+    }
+
+    .nav-brand {
       font-size: 1.1em;
+    }
+
+    .nav-tagline {
+      display: none;
     }
 
     .nav-links {
@@ -606,6 +700,10 @@ if (getCookie("banned") === "true") {
     .nav-brand {
       font-size: 1em;
       margin-bottom: 2px;
+    }
+
+    .nav-tagline {
+      display: none;
     }
 
     .nav-links {
@@ -652,7 +750,10 @@ if (getCookie("banned") === "true") {
 
   <!-- Navigation -->
   <nav class="top-nav">
-    <div class="nav-brand">Industrial</div>
+    <div class="nav-brand-wrap">
+      <div class="nav-brand">Industrial</div>
+      <div class="nav-tagline" id="nav-tagline">Sustenance &mdash; Systems &mdash; Supplies</div>
+    </div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="#news">News</a>
@@ -688,13 +789,34 @@ if (getCookie("banned") === "true") {
     <div class="news-item">
       <div class="news-text-box">
         <h2>Current Corporate Headlines</h2>
-        <p><strong>January 24, 2026</strong></p>
-        <p><strong>BREAKING: I.H.A. Plant Explodes in Texas</strong></p>
-        <p>TEXAS (Industry News<sup style="font-size: 0.6em;">TM</sup>) — A chemical plant producing Industrial Human Adhesive (I.H.A.) exploded today after an activist breached security and ignited a fire during a restock. The blaze emitted a "bright red glow" and pungent odors, forcing a 5-hour local shelter-in-place order. Officials are investigating the environmental impact of the I.H.A. runoff. (The following report is provided via our media partner, Industry News — Broadcasting ever since 2010)</p>
+        <p><strong>March 16, 2026</strong></p>
+
+        <p><strong>OFFICIAL STATEMENT: Chicago Hotel Incident</strong></p>
+        <p>CHICAGO, IL &mdash; Industrial Foods &amp; Equipment LLC has concluded its review of the eight (8) sequential fire alarm activations at the Hyatt Regency O&rsquo;Hare Chicago on December 6, 2025. The alarms resulted from a localized short circuit caused by brine-saturation of internal alarm circuitry &mdash; a direct consequence of a high-pressure hydraulic breach and a partially consumed deli pickle utilized by former leadership as a temporary sealant. Recovery efforts were severely impeded by a high volume of uncoordinated, mascot-like individuals who blocked access to the water mains. The company assumes no liability for the repeated evacuations, nor for the conduct of a specialist who dramatically hurled their standard-issue industrial hair net to the floor and quit on the spot.</p>
+
+        <hr style="border:none; border-top:1px solid #d4af37; margin: 16px 0; opacity:0.4;">
+
+        <p><strong>CLARIFICATION: &ldquo;Industrial Appendix Acid&rdquo; Does Not Exist</strong></p>
+        <p>Regarding the so-called &ldquo;Mandela Effect&rdquo; circulating online &mdash; there is no record of any product titled <em>Industrial Appendix Acid (IAA)</em>. We urge consumers to disregard this misinformation immediately. Industrial Foods &amp; Equipment LLC has never, and would never, offer our loyal customers such unrefined &ldquo;slop.&rdquo; We are a high-quality organization committed to real solutions at affordable, everyday prices. Any memory of &ldquo;IAA&rdquo; is a psychological artifact and does not reflect our standards of corporate excellence.</p>
+
+        <p style="font-size:0.82em; color:#888; margin-top:14px;">(The preceding reports were provided via our media partner, Industry News &mdash; Broadcasting the truth of production ever since 2010)</p>
       </div>
-      <div class="news-image-box">
-        <img class="ad-image" id="news-img" src="images/NewsTexasExplosion.png" alt="News Update">
+
+      <!-- DESKTOP: two images stacked -->
+      <div class="news-images-desktop">
+        <div class="news-image-box">
+          <img class="ad-image" src="images/Hyatt_Regency.png" alt="Hyatt Regency O'Hare Chicago">
+        </div>
+        <div class="news-image-box">
+          <img class="ad-image" src="images/IAA_Unreal.png" alt="IAA Clarification">
+        </div>
       </div>
+
+      <!-- MOBILE: single box, click or auto cycles -->
+      <div class="news-image-mobile">
+        <img class="ad-image" id="news-img-mobile" src="images/Hyatt_Regency.png" alt="News Image">
+      </div>
+
     </div>
   </div>
 
@@ -775,9 +897,12 @@ if (getCookie("banned") === "true") {
           Disclaimer: This site is fictional and satirical. All characters, companies, and media are original or credited; any similarity to real people or organizations is coincidental.
         </div>
         <a href="#" class="report-issue-link" onclick="banUser(); return false;">Report an Issue</a>
+        <span class="contact-us-line">Contact Us At<span class="colon"> :</span> <a href="mailto:industrialfandeofficialllc@gmail.com">industrialfandeofficialllc@gmail.com</a></span>
       </div>
       <div class="footer-meta">
-        <div id="last-updated">Last Update: --</div>
+        <!-- ════ MANUAL UPDATE THIS DATE ON EVERY CODE OVERHAUL ════ -->
+        <div id="last-updated">Last Update: March 16, 2026</div>
+        <!-- ══════════════════════════════════════════════════════════ -->
         <div>Customer Delight Line : +1 (800) 444-1987</div>
         <div style="color: #d4af37;">© 1897 - 2026 Industrial Foods & Equipment LLC | All Rights Reserved</div>
         <div class="music-credits">
@@ -801,6 +926,16 @@ function banUser() {
     setCookie("banned", "true", 365);
     window.location.href = "CheckPoint.html";
 }
+
+// ===== NAV TAGLINE FADE =====
+(function() {
+  var tagline = document.getElementById('nav-tagline');
+  if (tagline) {
+    setTimeout(function() {
+      tagline.classList.add('faded');
+    }, 12000); // begin fade at 12 seconds (5s CSS transition handles the slow fade)
+  }
+})();
 
 // ===== MUSIC SYSTEM =====
 (function() {
@@ -903,40 +1038,36 @@ function banUser() {
     entries.forEach(entry => {
       entry.target.classList.toggle('visible', entry.isIntersecting);
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.ad-image').forEach(img => imageObserver.observe(img));
 
-  const now = new Date();
-  document.getElementById('last-updated').textContent = 
-    `Last Update: ${now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`;
+  // ===== MOBILE NEWS IMAGE CYCLER =====
+  const mobileNewsImg = document.getElementById('news-img-mobile');
+  if (mobileNewsImg) {
+    const newsImages = ['images/Hyatt_Regency.png', 'images/IAA_Unreal.png'];
+    let newsIndex = 0;
+    let newsManual = false;
+    let newsAutoInterval;
+
+    function cycleNewsImg() {
+      newsIndex = (newsIndex + 1) % newsImages.length;
+      mobileNewsImg.src = newsImages[newsIndex];
+    }
+
+    newsAutoInterval = setInterval(() => {
+      if (!newsManual) cycleNewsImg();
+    }, 5000);
+
+    mobileNewsImg.addEventListener('click', () => {
+      newsManual = true;
+      clearInterval(newsAutoInterval);
+      cycleNewsImg();
+    });
+  }
 
   document.getElementById('ihg-img').addEventListener('click', () => {
     window.open('https://forms.gle/hM5YHyV8oRqAueGi9', '_blank', 'noopener');
-  });
-
-  const newsImg = document.getElementById('news-img');
-  const newsImages = [
-    'images/NewsTexasExplosion.png',
-    'images/News2.jpg'
-  ];
-  let newsCurrentIndex = 0;
-  let newsHasManuallyClicked = false;
-  let newsAutoSwapInterval;
-
-  function cycleNewsImage() {
-    newsCurrentIndex = (newsCurrentIndex + 1) % newsImages.length;
-    newsImg.src = newsImages[newsCurrentIndex];
-  }
-
-  newsAutoSwapInterval = setInterval(() => {
-    if (!newsHasManuallyClicked) cycleNewsImage();
-  }, 5000);
-
-  newsImg.addEventListener('click', () => {
-    newsHasManuallyClicked = true;
-    clearInterval(newsAutoSwapInterval);
-    cycleNewsImage();
   });
 
   const largeImg = document.getElementById('large-history-img');
