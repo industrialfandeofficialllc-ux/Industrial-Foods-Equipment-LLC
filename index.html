@@ -2,21 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Industrial Equipment & Foods</title>
-
-<!-- Meta Tags -->
+<title>Industrial Equipment & Foods — Coming May 11th</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<meta name="description" content="Industrial Equipment & Foods — innovating industrial consumables since 1897.">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-<link rel="shortcut icon" type="image/png" href="images/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
-
-<!-- Fonts -->
+<meta name="description" content="Industrial Equipment & Foods LLC — New content arriving May 11th, 2026.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
 <!-- Google Analytics -->
@@ -28,50 +18,15 @@
   gtag('config', 'G-J6DLYEMS15');
 </script>
 
-<!-- Cookie Helper Functions -->
-<script>
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
-}
-
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-function deleteCookie(name) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-}
-
-// Ban check - redirect if banned=true
-if (getCookie("banned") === "true") {
-    window.location.href = "CheckPoint.html";
-}
-</script>
-
 <style>
-  /* ===== GLOBAL RESET & BASE STYLES ===== */
   * {
     box-sizing: border-box;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+  *::-webkit-scrollbar { display: none; }
 
-  *::-webkit-scrollbar {
-    display: none;
-  }
-
-  html { 
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -79,340 +34,233 @@ if (getCookie("banned") === "true") {
     font-family: Arial, Helvetica, sans-serif;
     color: #e6e6e6;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
   }
 
-  /* ===== LAYOUT ===== */
+  /* ── SITE FRAME ── */
   .site-frame {
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 20px auto;
     border: 4px solid #d4af37;
     background: #0b0b0b;
-    padding: 26px 36px 36px;
+    padding: 30px 40px 40px;
     position: relative;
   }
 
-  .gold-divider {
-    height: 4px;
-    background: #d4af37;
-    margin: 22px 0 34px;
-  }
-
-  /* ===== NAVIGATION ===== */
+  /* ── NAV ── */
   .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 32px;
-    margin-bottom: 18px;
-    background: #0b0b0b;
-    padding: 16px 0 16px 30px;
+    justify-content: space-between;
     border-bottom: 2px solid #d4af37;
-  }
-
-  .nav-brand-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 40px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
   }
 
   .nav-brand {
     color: #d4af37;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5em;
     letter-spacing: 1.5px;
-    font-size: 1.4em;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    line-height: 1.1;
   }
 
-  /* ===== NAV TAGLINE (fades after 12s, desktop only) ===== */
   .nav-tagline {
-    color: #d4af37;
+    color: #9f8f4f;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 0.7em;
+    font-size: 0.75em;
     letter-spacing: 0.5px;
-    opacity: 1;
-    transition: opacity 5s ease;
-    white-space: nowrap;
-    margin-top: 2px;
-    text-align: center;
+    margin-top: 3px;
   }
 
-  .nav-tagline.faded {
-    opacity: 0;
-    pointer-events: none;
+  /* ── GOLD DIVIDER ── */
+  .gold-divider {
+    height: 4px;
+    background: #d4af37;
+    margin: 28px 0;
   }
 
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    margin-left: 20px;
-  }
-
-  .top-nav a {
-    color: #d4af37;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 0.95em;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-  }
-
-  .top-nav a:hover,
-  .top-nav a:focus-visible {
-    text-decoration: underline;
-    outline: none;
-    color: #fff;
-    text-shadow: 0 0 12px #d4af37, 0 0 18px #d4af37, 0 0 24px #d4af37;
-  }
-
-  /* ===== HEADER ===== */
-  .header {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-
-  .logo {
-    max-width: 180px;
-    border: 3px solid #d4af37;
-    padding: 8px;
-    background: #000;
-  }
-
-  .logo img {
-    width: 100%;
-    display: block;
-  }
-
-  .header-text h1 {
-    color: #d4af37;
-    letter-spacing: 2px;
-    margin: 0 0 6px;
-    font-size: 1.7em;
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-  }
-
-  .header-text p {
-    margin: 0;
-    font-size: 0.95em;
-    color: #bbb;
-    line-height: 1.45;
-    text-indent: 2em;
-  }
-
-  /* ===== SHARED IMAGE STYLES ===== */
-  .image-box,
-  .news-image-box,
-  .history-image-box {
-    border: 3px solid #d4af37;
-    padding: 12px;
-    background: #000;
-    transition: box-shadow 0.4s ease;
-  }
-
-  .image-box:hover,
-  .news-image-box:hover,
-  .history-image-box:hover {
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
-  }
-
-  .ad-image {
-    width: 100%;
-    display: block;
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  }
-
-  .ad-image.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .ad-image.visible:hover {
-    box-shadow: 0 0 12px #d4af37, 0 0 20px #d4af37, 0 0 27px #d4af37;
-    filter: brightness(1.2);
-  }
-
-  .ad-image.clickable {
-    cursor: pointer;
-  }
-
-  /* ===== NEWS SECTION ===== */
-  #news {
-    scroll-margin-top: 80px;
-    margin-bottom: 40px;
-  }
-
-  /* ===== NEWS LAYOUT ===== */
-  .news-item {
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-  }
-
-  .news-text-box {
-    flex: 1;
-    border: 1px solid #d4af37;
-    padding: 26px;
-    color: #aaa;
-  }
-
-  .news-text-box h2 {
-    color: #d4af37;
-    margin-top: 0;
-    font-family: 'Lobster', cursive;
-    font-style: italic;
-    font-size: 1.8em;
-    letter-spacing: 1px;
-  }
-
-  /* Desktop: right column with two stacked image boxes */
-  .news-images-desktop {
-    width: 380px;
-    flex-shrink: 0;
+  /* ── HERO ── */
+  .hero {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 10px;
+    gap: 18px;
   }
 
-  .news-images-desktop .news-image-box {
+  .logo-box {
     border: 3px solid #d4af37;
-    padding: 12px;
+    padding: 10px;
     background: #000;
+    width: 160px;
+  }
+
+  .logo-box img {
+    width: 100%;
+    display: block;
+  }
+
+  .hero-headline {
+    font-family: 'Lobster', cursive;
+    font-style: italic;
+    color: #d4af37;
+    font-size: clamp(2em, 5vw, 3.4em);
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1.15;
+    text-shadow: 0 0 22px rgba(212,175,55,0.35);
+  }
+
+  .hero-sub {
+    color: #9f8f4f;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05em;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  /* ── COUNTDOWN ── */
+  .countdown-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 8px 0 4px;
+  }
+
+  .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+  }
+
+  .cd-value {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(2.2em, 5vw, 3.2em);
+    font-weight: 600;
+    color: #d4af37;
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 4px;
+    width: 90px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    box-shadow: 0 0 14px rgba(212,175,55,0.18);
     transition: box-shadow 0.4s ease;
   }
 
-  .news-images-desktop .news-image-box:hover {
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+  .cd-value:hover {
+    box-shadow: 0 0 24px rgba(212,175,55,0.38);
   }
 
-  /* Mobile: single cycling image box — hidden on desktop */
-  .news-image-mobile {
+  .cd-label {
+    margin-top: 7px;
+    font-size: 0.72em;
+    color: #9f8f4f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cd-separator {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #d4af37;
+    font-size: 2.6em;
+    font-weight: 600;
+    align-self: center;
+    margin-top: -12px;
+    opacity: 0.7;
+  }
+
+  /* ── EXPIRED TEXT ── */
+  .expired-text {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4em;
+    text-align: center;
+    margin: 10px 0;
     display: none;
   }
 
-  /* ===== PRODUCTS SECTION ===== */
-  #products {
-    scroll-margin-top: 80px;
+  /* ── PRODUCT PREVIEW ── */
+  .preview-section {
+    margin-top: 10px;
   }
 
-  #products > h2 {
-    color: #d4af37;
-    text-align: center;
-    font-size: 2.2em;
-    letter-spacing: 2px;
-    margin: 0 0 20px;
+  .preview-title {
     font-family: 'Lobster', cursive;
     font-style: italic;
-  }
-
-  .product {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
-    align-items: flex-start;
-  }
-
-  .product.reverse {
-    flex-direction: row-reverse;
-  }
-
-  .image-box {
-    max-width: 420px;
-    flex-shrink: 0;
-  }
-
-  .image-box img {
-    max-height: 500px;
-    object-fit: contain;
-  }
-
-  .text-box {
-    flex: 1;
-    border: 1px solid #d4af37;
-    padding: 18px;
-    color: #aaa;
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .text-box h2 {
     color: #d4af37;
-    margin: 0 0 10px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.5em;
-  }
-
-  .text-box p {
-    margin: 0;
-    line-height: 1.45;
-  }
-
-  /* ===== HISTORY SECTION ===== */
-  .history-section {
-    margin-top: 60px;
-    scroll-margin-top: 80px;
-  }
-
-  .history-section h2 {
-    color: #d4af37;
-    text-align: center;
-    font-size: 2.2em;
+    font-size: 1.9em;
     letter-spacing: 2px;
-    margin-bottom: 30px;
-    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin: 0 0 22px;
+  }
+
+  .preview-note {
+    text-align: center;
+    color: #9f8f4f;
     font-style: italic;
+    font-size: 0.85em;
+    margin: -14px 0 22px;
+    letter-spacing: 0.5px;
   }
 
-  .history-text-box {
-    border: 1px solid #d4af37;
-    padding: 26px;
-    color: #aaa;
-    margin-bottom: 40px;
-  }
-
-  .history-images {
+  .preview-grid {
     display: flex;
     gap: 20px;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
   }
 
-  .history-image-box.large {
-    max-width: 350px;
-    flex: 1 1 auto;
+  .preview-card {
+    border: 2px solid #d4af37;
+    background: #000;
+    padding: 12px;
+    max-width: 300px;
+    flex: 1 1 260px;
+    transition: box-shadow 0.4s ease;
+    cursor: default;
   }
 
-  .history-image-box.small {
-    max-width: 175px;
+  .preview-card:hover {
+    box-shadow: 0 0 20px rgba(212,175,55,0.35);
   }
 
-  .history-image-box img {
-    max-height: 500px;
-    object-fit: contain;
-    cursor: pointer;
+  .preview-card img {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .preview-card img.visible {
     opacity: 1;
     transform: translateY(0);
-    transition: box-shadow 0.4s ease, filter 0.4s ease;
   }
 
-  /* ===== FOOTER ===== */
+  .preview-card-label {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.95em;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FOOTER ── */
   footer {
     border-top: 2px solid #d4af37;
     padding-top: 18px;
@@ -421,107 +269,77 @@ if (getCookie("banned") === "true") {
     font-size: 0.9em;
   }
 
-  .footer-row {
+  .footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
+    gap: 24px;
     flex-wrap: wrap;
   }
 
-  .footer-quote {
+  .footer-left {
     flex: 1;
-    max-width: 60%;
-    min-width: 300px;
+    min-width: 260px;
   }
 
-  .report-issue-link {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 13px;
-    font-weight: bold;
-    font-style: italic;
-    color: #888;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .report-issue-link:hover {
-    color: #d4af37;
-    text-decoration: underline;
-  }
-
-  /* ===== CONTACT US LINK ===== */
-  .contact-us-line {
-    display: block;
-    margin-top: 8px;
-    font-size: 13px;
-    font-style: italic;
-    color: #d4af37;
-  }
-
-  .contact-us-line .colon {
-    font-weight: bold;
-  }
-
-  .contact-us-line a {
-    color: #c9a227;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-
-  .contact-us-line a:hover {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  .footer-meta {
+  .footer-right {
     text-align: right;
-    white-space: nowrap;
     font-size: 0.85em;
     color: #9f8f4f;
     flex-shrink: 0;
   }
 
-  .music-credits {
-    margin-top: 8px;
-    font-size: 1em;
-    color: #bfae6a;
-    height: auto;
-    position: relative;
+  .deadline-note {
+    margin-top: 10px;
+    font-size: 0.82em;
+    color: #888;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 520px;
   }
 
-  .music-credit {
-    display: none;
-  }
-
-  .music-credit.active {
-    display: block;
-  }
-
-  .music-credit a {
-    color: #9f8f4f;
-    text-decoration: none;
-  }
-
-  .music-credit a:hover {
+  .contact-line {
+    font-style: italic;
+    font-size: 0.85em;
     color: #d4af37;
+    margin-top: 8px;
+  }
+
+  .contact-line a {
+    color: #c9a227;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .contact-line a:hover {
+    color: #fff;
     text-decoration: underline;
   }
 
-  /* ===== MUSIC POPUP ===== */
+  .music-credits {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #bfae6a;
+  }
+
+  .music-credit { display: none; }
+  .music-credit.active { display: block; }
+  .music-credit a { color: #9f8f4f; text-decoration: none; }
+  .music-credit a:hover { color: #d4af37; text-decoration: underline; }
+
+  /* ── MUSIC POPUP ── */
   #music-popup {
     position: absolute;
     top: 10px;
-    left: 10px;
-    background: rgba(11, 11, 11, 0.85);
-    padding: 6px 16px;
+    right: 14px;
+    background: rgba(11,11,11,0.88);
+    border: 1px solid #d4af37;
+    padding: 6px 14px;
     z-index: 10000;
     text-align: center;
     color: #9f8f4f;
-    font-size: 0.75em;
+    font-size: 0.73em;
     opacity: 1;
     transition: opacity 1.5s ease;
     white-space: nowrap;
@@ -532,441 +350,292 @@ if (getCookie("banned") === "true") {
     pointer-events: none;
   }
 
-  #music-popup p {
-    margin: 0;
-    line-height: 1.2;
+  #music-popup p { margin: 0; line-height: 1.4; }
+
+  /* ── STAR ACCENT ── */
+  .star-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 6px 0;
+    opacity: 0.55;
   }
 
-  /* ===== RESPONSIVE DESIGN ===== */
-  @media (min-width: 901px) {
-    .product {
-      margin-bottom: 15px;
-    }
+  .star-row img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
   }
 
-  @media (max-width: 900px) {
+  /* ── DISCLAIMER STRIP ── */
+  .disclaimer-strip {
+    font-size: 0.7em;
+    color: #d4af37;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
     .site-frame {
       margin: 10px;
-      padding: 20px 16px;
+      padding: 18px 16px;
       border-width: 3px;
     }
 
-    .header { 
-      flex-direction: column; 
-      text-align: center; 
-    }
-    
-    .header-text h1 {
-      font-size: 1.4em;
-      letter-spacing: 1px;
-    }
-
-    .header-text p { 
-      font-size: 0.9em;
-      text-indent: 0; 
-    }
-    
-    .news-item,
-    .product,
-    .product.reverse { 
-      flex-direction: column;
-    }
-
-    .product,
-    .product.reverse {
-      margin-bottom: 24px;
-    }
-
-    /* Mobile news images: hide stacked desktop pair, show single cycler */
-    .news-images-desktop {
-      display: none;
-    }
-
-    .news-image-mobile {
-      display: block;
-      width: 100%;
-      border: 3px solid #d4af37;
-      padding: 12px;
-      background: #000;
-      transition: box-shadow 0.4s ease;
-      cursor: pointer;
-    }
-
-    .news-image-mobile:hover {
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
-    }
-    
-    .image-box { 
-      max-width: 100%; 
-    }
-
-    .text-box {
-      align-self: stretch;
-      justify-content: center;
-    }
-    
-    .history-images { 
-      flex-direction: column; 
-      align-items: center; 
-    }
-    
-    .history-image-box.large,
-    .history-image-box.small { 
-      max-width: 100%; 
-    }
-    
-    .footer-row { 
-      flex-direction: column; 
-      text-align: center;
-      gap: 20px;
-    }
-    
-    .footer-quote {
-      max-width: 100%;
-      min-width: auto;
-    }
-    
-    .footer-meta { 
-      text-align: center;
-      white-space: normal;
-    }
-
-    .music-credits {
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 0.9em;
-    }
-
-    #music-popup {
-      padding: 5px 14px;
-      font-size: 0.7em;
-      top: 8px;
-      left: 8px;
-    }
-    
-    /* MOBILE STICKY NAV - MORE COMPACT */
-    .top-nav { 
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-    }
-
-    .nav-brand-wrap {
-      align-items: center;
-      margin-right: 0;
-      margin-bottom: 3px;
-    }
-
-    .nav-brand {
-      font-size: 1.1em;
-    }
-
-    .nav-tagline {
-      display: none;
-    }
-
-    .nav-links {
-      gap: 18px;
-      font-size: 0.85em;
-      justify-content: center;
-      margin-left: 0;
-    }
-
-    #products > h2,
-    .history-section h2 {
+    .cd-value {
+      width: 68px;
+      height: 62px;
       font-size: 1.8em;
     }
 
-    * {
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
+    .cd-unit { min-width: 60px; }
+    .cd-separator { font-size: 2em; }
+
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-right { text-align: center; }
+
+    .preview-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preview-card {
+      max-width: 90%;
     }
   }
 
-  @media (max-width: 480px) {
-    .site-frame {
-      margin: 5px;
-      padding: 15px 12px;
-      border-width: 2px;
+  @media (max-width: 420px) {
+    .cd-value {
+      width: 58px;
+      height: 54px;
+      font-size: 1.5em;
     }
 
-    /* EXTRA COMPACT FOR VERY SMALL SCREENS */
-    .top-nav {
-      padding: 8px 0;
-      gap: 8px;
-    }
-
-    .nav-brand {
-      font-size: 1em;
-      margin-bottom: 2px;
-    }
-
-    .nav-tagline {
-      display: none;
-    }
-
-    .nav-links {
-      gap: 15px;
-      font-size: 0.8em;
-    }
-
-    .footer-meta {
-      font-size: 0.75em;
-    }
-
-    .footer-meta div {
-      margin-bottom: 8px;
-    }
-
-    .music-credits {
-      font-size: 0.8em;
-    }
-
-    #music-popup {
-      padding: 4px 12px;
-      font-size: 0.65em;
-      top: 6px;
-      left: 6px;
-    }
-
-    .footer-meta div:nth-child(3) {
-      word-break: break-word;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-    }
+    .countdown-wrap { gap: 10px; }
+    .cd-separator { font-size: 1.6em; }
   }
 </style>
 </head>
-
 <body>
 
 <div class="site-frame">
 
-  <!-- Music Control Popup -->
+  <!-- Music Popup -->
   <div id="music-popup">
-    <p>Triple Click Anywhere Audio Control</p>
+    <p>Triple Click Anywhere &mdash; Audio Control</p>
   </div>
 
-  <!-- Navigation -->
+  <!-- Nav -->
   <nav class="top-nav">
-    <div class="nav-brand-wrap">
+    <div>
       <div class="nav-brand">Industrial</div>
-      <div class="nav-tagline" id="nav-tagline">Sustenance &mdash; Systems &mdash; Supplies</div>
+      <div class="nav-tagline">Sustenance &mdash; Systems &mdash; Supplies</div>
     </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="#news">News</a>
-      <a href="#products">Products</a>
-      <a href="#history">History</a>
+    <div style="color:#9f8f4f; font-style:italic; font-size:0.85em; text-align:right;">
+      New Version Incoming
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="header">
-    <div class="logo">
-      <img src="images/industrial-equipment-foods-logo.png" alt="Industrial Equipment & Foods Logo">
+  <div class="gold-divider"></div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="logo-box">
+      <img src="industrial-equipment-foods-logo.png" alt="Industrial Equipment & Foods Logo">
     </div>
-    <div class="header-text">
-      <h1>Our Initiative At Industrial Foods & Equipment LLC</h1>
-      <p>
-        At Industrial Foods & Equipment LLC, we transform lives through innovation.
-        We provide groundbreaking industrial and household products while committing
-        35% of our profits to global infrastructure and housing for those in need.
-        By partnering with government initiatives, we have already funded over 1,300
-        tiny homes. Our operations also support long-term workforce development through 
-        skilled manufacturing, logistics, and research roles tied directly to regional 
-        infrastructure growth. Our resource systems lead the industry with 85.52% efficiency,
-        ensuring a better world with minimal waste.
-      </p>
+
+    <div class="star-row">
+      <img src="1777960949821_image.png" alt="★">
+      <img src="1777960949821_image.png" alt="★">
+      <img src="1777960949821_image.png" alt="★">
+    </div>
+
+    <h1 class="hero-headline">New Content — May 11th, 2026</h1>
+    <p class="hero-sub">The Gold Standard Is Being Refreshed &mdash; Stand By</p>
+
+    <!-- Countdown -->
+    <div class="countdown-wrap" id="countdown-wrap">
+      <div class="cd-unit">
+        <div class="cd-value" id="cd-days">--</div>
+        <div class="cd-label">Days</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-value" id="cd-hours">--</div>
+        <div class="cd-label">Hours</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-value" id="cd-mins">--</div>
+        <div class="cd-label">Minutes</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-value" id="cd-secs">--</div>
+        <div class="cd-label">Seconds</div>
+      </div>
+    </div>
+
+    <div class="expired-text" id="expired-text">
+      The update is live — or arriving any moment now. Refresh shortly.
+    </div>
+
+    <div class="star-row">
+      <img src="1777960949821_image.png" alt="★">
+      <img src="1777960949821_image.png" alt="★">
+      <img src="1777960949821_image.png" alt="★">
     </div>
   </div>
 
   <div class="gold-divider"></div>
 
-  <!-- News Section -->
-  <div id="news">
-    <div class="news-item">
-      <div class="news-text-box">
-        <h2>Current Corporate Headlines</h2>
-        <p><strong>March 16, 2026</strong></p>
+  <!-- Product Preview -->
+  <div class="preview-section">
+    <h2 class="preview-title">Preview Before Update Is Complete</h2>
+    <p class="preview-note">A glimpse at what's coming — full site experience returns May 11th.</p>
 
-        <p><strong>OFFICIAL STATEMENT: Chicago Hotel Incident</strong></p>
-        <p>CHICAGO, IL &mdash; Industrial Foods &amp; Equipment LLC has concluded its review of the eight (8) sequential fire alarm activations at the Hyatt Regency O&rsquo;Hare Chicago on December 6, 2025. The alarms resulted from a localized short circuit caused by brine-saturation of internal alarm circuitry &mdash; a direct consequence of a high-pressure hydraulic breach and a partially consumed deli pickle utilized by former leadership as a temporary sealant. Recovery efforts were severely impeded by a high volume of uncoordinated, mascot-like individuals who blocked access to the water mains. The company assumes no liability for the repeated evacuations, nor for the conduct of a specialist who dramatically hurled their standard-issue industrial hair net to the floor and quit on the spot.</p>
-
-        <hr style="border:none; border-top:1px solid #d4af37; margin: 16px 0; opacity:0.4;">
-
-        <p><strong>CLARIFICATION: &ldquo;Industrial Appendix Acid&rdquo; Does Not Exist</strong></p>
-        <p>Regarding the so-called &ldquo;Mandela Effect&rdquo; circulating online &mdash; there is no record of any product titled <em>Industrial Appendix Acid (IAA)</em>. We urge consumers to disregard this misinformation immediately. Industrial Foods &amp; Equipment LLC has never, and would never, offer our loyal customers such unrefined &ldquo;slop.&rdquo; We are a high-quality organization committed to real solutions at affordable, everyday prices. Any memory of &ldquo;IAA&rdquo; is a psychological artifact and does not reflect our standards of corporate excellence.</p>
-
-        <p style="font-size:0.82em; color:#888; margin-top:14px;">(The preceding reports were provided via our media partner, Industry News &mdash; Broadcasting the truth of production ever since 2010)</p>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <img src="ihg-original_2_.png" alt="Industrial Humanized Grease Advertisement" class="preview-img">
+        <div class="preview-card-label">Industrial Humanized Grease (I.H.G.)</div>
       </div>
-
-      <!-- DESKTOP: two images stacked -->
-      <div class="news-images-desktop">
-        <div class="news-image-box">
-          <img class="ad-image" src="images/Hyatt_Regency.png" alt="Hyatt Regency O'Hare Chicago">
-        </div>
-        <div class="news-image-box">
-          <img class="ad-image" src="images/IAA_Unreal.png" alt="IAA Clarification">
-        </div>
+      <div class="preview-card">
+        <img src="ivf_2_.png" alt="Industrial Versatile Flavoring Advertisement" class="preview-img">
+        <div class="preview-card-label">Industrial Versatile Flavoring (I.V.F.)</div>
       </div>
-
-      <!-- MOBILE: single box, click or auto cycles -->
-      <div class="news-image-mobile">
-        <img class="ad-image" id="news-img-mobile" src="images/Hyatt_Regency.png" alt="News Image">
+      <div class="preview-card">
+        <img src="iha_2_.png" alt="Industrial Human Adhesive Advertisement" class="preview-img">
+        <div class="preview-card-label">Industrial Human Adhesive (I.H.A.)</div>
       </div>
-
     </div>
   </div>
 
   <div class="gold-divider"></div>
-
-  <!-- Products Section -->
-  <div id="products">
-    <h2>Our Products</h2>
-
-    <div class="product">
-      <div class="image-box">
-        <img class="ad-image clickable" id="ihg-img" src="images/ihg-original.png" alt="IHG Advertisement">
-      </div>
-      <div class="text-box">
-        <h2>Industrial Humanized Grease (I.H.G.)</h2>
-        <p>First released in 1975, this quintessential lubricant has achieved legendary status over five decades. While its versatile chemical properties allow for applications ranging from industrial shaving cream to artificial butter, its impact on the market remains unforgettable. Some clients claim it rivals a five-course meal; others simply cannot operate without it.</p>
-      </div>
-    </div>
-
-    <div class="product reverse">
-      <div class="image-box">
-        <img class="ad-image" src="images/ivf.png" alt="IVF Advertisement">
-      </div>
-      <div class="text-box">
-        <h2>Industrial Versatile Flavoring (I.V.F.)</h2>
-        <p>Our 9th generation flavoring system, launched in 2020, is a cornerstone of modern food engineering. Retailing at $32 per quarter gallon, I.V.F. possesses the unique ability to transform basic gruel into a gourmet dessert experience. It is absolutely essential for those seeking maximum flavor potential—just mix, shock, and serve. To date, this remains a top performer with 3.4 billion units sold.</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="image-box">
-        <img class="ad-image" src="images/iha.png" alt="IHA Advertisement">
-      </div>
-      <div class="text-box">
-        <h2>Industrial Human Adhesive (I.H.A.)</h2>
-        <p>The result of a prolonged 125-year development cycle, I.H.A. is officially recognized as the world's strongest industrial-grade spray. Engineered specifically to avoid bonding with human skin, it offers unparalleled safety and efficiency in the workspace. Despite recent facility disruptions, our commitment to this non-reactive adhesive technology remains the gold standard of the industry.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="gold-divider"></div>
-
-  <!-- History Section -->
-  <div id="history" class="history-section">
-    <h2>Our Story</h2>
-    
-    <div class="history-text-box">
-      <p><strong>The Founding Era (1897–1930)</strong></p>
-      <p>Established in 1897 in Bengal by J.P. Richardson Sr., the company pivoted from molasses to "absorbed and awful" industrial machinery following a global sugar crash. Though early appliances were discontinued, the factory remained an experimental powerhouse. Proper Production Protocols were established here to ensure our machinery never failed under pressure.</p>
-      
-      <p><strong>The American Expansion (1975–2002)</strong></p>
-      <p>Under Jonathan Richardson, we moved to the U.S., launching Industrial Humanized Grease (I.H.G.) in 1975 with 182,000 units sold in 90 days. Notable expansions funded a nationwide network of manufacturing plants and secret research laboratories.</p>
-      
-      <p><strong>The Albuquerque Tragedy & Modern Growth</strong></p>
-      <p>In the late 1980s, Jonathan Richardson (age 62) suffered a fatal heart attack on a flight from New Mexico after being denied a merger by GE's Jack Welch. At the time of his passing, the firm was valued at $3.63 billion (on Wednesdays). Highly Hidden assets remain within the Richardson estate.</p>
-      
-      <p><strong>The Present Era</strong></p>
-      <p>Today, we employ over 17,000 specialists. Following the 2020 success of Industrial Versatile Flavoring (I.V.F.), we released Industrial Human Adhesive (I.H.A.) in 2023—the first professional glue engineered to never stick to human skin.</p>
-    </div>
-
-    <div class="history-images">
-      <div class="history-image-box large">
-        <img class="ad-image" id="large-history-img" src="images/HistoryPageViewOut1890s.jpg" alt="Factory Exterior View from 1890s">
-      </div>
-      <div class="history-image-box small">
-        <img class="ad-image" id="small-history-img" src="images/HistoryPageInView.jpg" alt="Factory Interior Tour Photo">
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-row">
-      <div class="footer-quote">
-        "Even over a century later, we never fail to innovate." — Industrial Equipment & Foods LLC
-        <div style="font-size: 0.7em; margin-top: 8px; color: #d4af37; line-height: 1.4;">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div>"Even over a century later, we never fail to innovate." &mdash; Industrial Equipment &amp; Foods LLC</div>
+        <div class="disclaimer-strip">
           Disclaimer: This site is fictional and satirical. All characters, companies, and media are original or credited; any similarity to real people or organizations is coincidental.
         </div>
-        <a href="#" class="report-issue-link" onclick="banUser(); return false;">Report an Issue</a>
-        <span class="contact-us-line">Contact Us At<span class="colon"> :</span> <a href="mailto:industrialfandeofficialllc@gmail.com">industrialfandeofficialllc@gmail.com</a></span>
+        <div class="contact-line">
+          Contact Us At: <a href="mailto:industrialfandeofficialllc@gmail.com">industrialfandeofficialllc@gmail.com</a>
+        </div>
+        <div class="deadline-note">
+          &#9432;&nbsp; <strong>Please Note:</strong> The May 11th deadline is an estimate and is not guaranteed to be exact.
+          The updated site will go live within approximately one day before or after this date.
+          Thank you for your patience — the new version is worth the wait.
+        </div>
       </div>
-      <div class="footer-meta">
-        <!-- ════ MANUAL UPDATE THIS DATE ON EVERY CODE OVERHAUL ════ -->
-        <div id="last-updated">Last Update: March 16, 2026</div>
-        <!-- ══════════════════════════════════════════════════════════ -->
+      <div class="footer-right">
         <div>Customer Delight Line : +1 (800) 444-1987</div>
-        <div style="color: #d4af37;">© 1897 - 2026 Industrial Foods & Equipment LLC | All Rights Reserved</div>
+        <div style="color:#d4af37; margin-top:4px;">© 1897 – 2026 Industrial Foods &amp; Equipment LLC | All Rights Reserved</div>
         <div class="music-credits">
           <div class="music-credit active" id="credit-1">
-            Music: "Falling" — Sappheiros · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
+            Music: "Falling" — Sappheiros &middot; <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
           </div>
           <div class="music-credit" id="credit-2">
-            Music: "IT'S OKAY" — firefl!es · <a href="https://youtu.be/K5hZqj8pY2Q" target="_blank" rel="noopener">CC BY 3.0</a>
+            Music: "IT'S OKAY" — firefl!es &middot; <a href="https://youtu.be/K5hZqj8pY2Q" target="_blank" rel="noopener">CC BY 3.0</a>
           </div>
         </div>
-        <div style="font-size: 0.75em; margin-top: 4px;">Disclaimer: For informational purposes only. Industrial Foods & Equipment LLC assumes no liability for use of products or technical specifications.</div>
       </div>
     </div>
   </footer>
 
-</div>
+</div><!-- /site-frame -->
 
 <script>
-// ===== BAN USER FUNCTION =====
-function banUser() {
-    setCookie("banned", "true", 365);
-    window.location.href = "CheckPoint.html";
-}
-
-// ===== NAV TAGLINE FADE =====
+// ===== COUNTDOWN TIMER =====
 (function() {
-  var tagline = document.getElementById('nav-tagline');
-  if (tagline) {
-    setTimeout(function() {
-      tagline.classList.add('faded');
-    }, 12000); // begin fade at 12 seconds (5s CSS transition handles the slow fade)
+  // Deadline: May 11, 2026 at midnight local time
+  var deadline = new Date('2026-05-11T00:00:00');
+
+  function pad(n) {
+    return String(Math.max(0, n)).padStart(2, '0');
   }
+
+  function tick() {
+    var now  = new Date();
+    var diff = deadline - now;
+
+    if (diff <= 0) {
+      // Show expired state
+      document.getElementById('countdown-wrap').style.display = 'none';
+      document.getElementById('expired-text').style.display = 'block';
+      return;
+    }
+
+    var days  = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins  = Math.floor((diff % 3600000)  / 60000);
+    var secs  = Math.floor((diff % 60000)    / 1000);
+
+    document.getElementById('cd-days').textContent  = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent  = pad(mins);
+    document.getElementById('cd-secs').textContent  = pad(secs);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ===== IMAGE FADE-IN ON SCROLL =====
+(function() {
+  var imgs = document.querySelectorAll('.preview-img');
+  if (!imgs.length) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
+
+  imgs.forEach(function(img) { observer.observe(img); });
 })();
 
 // ===== MUSIC SYSTEM =====
 (function() {
   'use strict';
 
-  const MUSIC_VOLUME = 0.3;
-  const CLICK_DELAY = 300;
-  const TRIPLE_CLICK_WINDOW = 400;
-  const POPUP_AUTO_HIDE_DELAY = 10000;
+  var MUSIC_VOLUME       = 0.3;
+  var CLICK_DELAY        = 300;
+  var TRIPLE_CLICK_WINDOW = 400;
+  var POPUP_AUTO_HIDE_DELAY = 10000;
 
-  let musicStarted = false;
-  let currentTrackIndex = 0;
-  let initialClickCount = 0;
-  let initialClickTimer = null;
-  let clickCount = 0;
-  let clickTimer = null;
+  var musicStarted     = false;
+  var currentTrackIndex = 0;
+  var initialClickCount = 0;
+  var initialClickTimer = null;
+  var clickCount = 0;
+  var clickTimer = null;
 
-  const playlistData = [
+  // NOTE: sound files must sit in the same folder as this HTML file.
+  // File names match the uploaded files exactly.
+  var playlistData = [
     {
-      audio: new Audio('sounds/[Non Copyrighted Music] Sappheiros - Falling.mp3'),
+      audio: new Audio('[Non Copyrighted Music] Sappheiros - Falling.mp3'),
       creditId: 'credit-1'
     },
     {
-      audio: new Audio('sounds/(Royalty Free Music) -IT\'S OKAYByFirefl!es.mp3'),
+      audio: new Audio("(Royalty Free Music) -IT'S OKAYByFirefl!es.mp3"),
       creditId: 'credit-2'
     }
   ];
 
-  playlistData.forEach((track, index) => {
+  playlistData.forEach(function(track) {
     track.audio.volume = MUSIC_VOLUME;
-    track.audio.addEventListener('ended', () => {
+    track.audio.addEventListener('ended', function() {
       currentTrackIndex = (currentTrackIndex + 1) % playlistData.length;
       updateCredit();
       playlistData[currentTrackIndex].audio.play();
@@ -974,7 +643,9 @@ function banUser() {
   });
 
   function updateCredit() {
-    document.querySelectorAll('.music-credit').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.music-credit').forEach(function(el) {
+      el.classList.remove('active');
+    });
     document.getElementById(playlistData[currentTrackIndex].creditId).classList.add('active');
   }
 
@@ -984,7 +655,7 @@ function banUser() {
 
   function startMusic() {
     if (!musicStarted) {
-      playlistData[currentTrackIndex].audio.play().catch(err => {
+      playlistData[currentTrackIndex].audio.play().catch(function(err) {
         console.log('Audio playback prevented:', err);
       });
       musicStarted = true;
@@ -995,13 +666,10 @@ function banUser() {
   function handleInitialClick() {
     initialClickCount++;
     clearTimeout(initialClickTimer);
-    
+
     if (initialClickCount === 1) {
-      initialClickTimer = setTimeout(() => {
-        if (initialClickCount === 1) {
-          startMusic();
-          switchToNormalMode();
-        }
+      initialClickTimer = setTimeout(function() {
+        if (initialClickCount === 1) { startMusic(); switchToNormalMode(); }
         initialClickCount = 0;
       }, CLICK_DELAY);
     } else if (initialClickCount === 3) {
@@ -1015,10 +683,9 @@ function banUser() {
   function handleNormalClick() {
     clickCount++;
     clearTimeout(clickTimer);
-    
-    clickTimer = setTimeout(() => {
+    clickTimer = setTimeout(function() {
       if (clickCount === 3) {
-        const currentAudio = playlistData[currentTrackIndex].audio;
+        var currentAudio = playlistData[currentTrackIndex].audio;
         currentAudio.paused ? currentAudio.play() : currentAudio.pause();
       }
       clickCount = 0;
@@ -1033,65 +700,6 @@ function banUser() {
   updateCredit();
   document.addEventListener('click', handleInitialClick);
   setTimeout(hidePopup, POPUP_AUTO_HIDE_DELAY);
-
-  const imageObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle('visible', entry.isIntersecting);
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.ad-image').forEach(img => imageObserver.observe(img));
-
-  // ===== MOBILE NEWS IMAGE CYCLER =====
-  const mobileNewsImg = document.getElementById('news-img-mobile');
-  if (mobileNewsImg) {
-    const newsImages = ['images/Hyatt_Regency.png', 'images/IAA_Unreal.png'];
-    let newsIndex = 0;
-    let newsManual = false;
-    let newsAutoInterval;
-
-    function cycleNewsImg() {
-      newsIndex = (newsIndex + 1) % newsImages.length;
-      mobileNewsImg.src = newsImages[newsIndex];
-    }
-
-    newsAutoInterval = setInterval(() => {
-      if (!newsManual) cycleNewsImg();
-    }, 5000);
-
-    mobileNewsImg.addEventListener('click', () => {
-      newsManual = true;
-      clearInterval(newsAutoInterval);
-      cycleNewsImg();
-    });
-  }
-
-  document.getElementById('ihg-img').addEventListener('click', () => {
-    window.open('https://forms.gle/hM5YHyV8oRqAueGi9', '_blank', 'noopener');
-  });
-
-  const largeImg = document.getElementById('large-history-img');
-  const smallImg = document.getElementById('small-history-img');
-  let hasManuallyClicked = false;
-  let autoSwapInterval;
-
-  function swapImages() {
-    [largeImg.src, smallImg.src] = [smallImg.src, largeImg.src];
-    [largeImg.alt, smallImg.alt] = [smallImg.alt, largeImg.alt];
-  }
-
-  autoSwapInterval = setInterval(() => {
-    if (!hasManuallyClicked) swapImages();
-  }, 10000);
-
-  [largeImg, smallImg].forEach(img => {
-    img.addEventListener('click', () => {
-      hasManuallyClicked = true;
-      clearInterval(autoSwapInterval);
-      swapImages();
-    });
-  });
-
 })();
 </script>
 
