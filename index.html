@@ -5,8 +5,8 @@
 <title>Industrial Equipment & Foods — Coming May 11th</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <meta name="description" content="Industrial Equipment & Foods LLC — New content arriving May 11th, 2026.">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
 <!-- Google Analytics -->
@@ -123,13 +123,27 @@
     margin: 0;
   }
 
+  /* ── STAR ROW — inline SVG, zero external dependencies ── */
+  .star-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 2px 0;
+    opacity: 0.8;
+  }
+
+  .gold-star {
+    width: 26px;
+    height: 26px;
+  }
+
   /* ── COUNTDOWN ── */
   .countdown-wrap {
     display: flex;
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
-    margin: 8px 0 4px;
+    margin: 4px 0;
   }
 
   .cd-unit {
@@ -159,7 +173,7 @@
   }
 
   .cd-value:hover {
-    box-shadow: 0 0 24px rgba(212,175,55,0.38);
+    box-shadow: 0 0 24px rgba(212,175,55,0.42);
   }
 
   .cd-label {
@@ -181,7 +195,7 @@
     opacity: 0.7;
   }
 
-  /* ── EXPIRED TEXT ── */
+  /* ── EXPIRED MESSAGE ── */
   .expired-text {
     color: #d4af37;
     font-family: 'Playfair Display', serif;
@@ -193,9 +207,7 @@
   }
 
   /* ── PRODUCT PREVIEW ── */
-  .preview-section {
-    margin-top: 10px;
-  }
+  .preview-section { margin-top: 10px; }
 
   .preview-title {
     font-family: 'Lobster', cursive;
@@ -204,7 +216,7 @@
     font-size: 1.9em;
     letter-spacing: 2px;
     text-align: center;
-    margin: 0 0 22px;
+    margin: 0 0 10px;
   }
 
   .preview-note {
@@ -212,7 +224,7 @@
     color: #9f8f4f;
     font-style: italic;
     font-size: 0.85em;
-    margin: -14px 0 22px;
+    margin: 0 0 22px;
     letter-spacing: 0.5px;
   }
 
@@ -230,11 +242,10 @@
     max-width: 300px;
     flex: 1 1 260px;
     transition: box-shadow 0.4s ease;
-    cursor: default;
   }
 
   .preview-card:hover {
-    box-shadow: 0 0 20px rgba(212,175,55,0.35);
+    box-shadow: 0 0 20px rgba(212,175,55,0.38);
   }
 
   .preview-card img {
@@ -277,10 +288,7 @@
     flex-wrap: wrap;
   }
 
-  .footer-left {
-    flex: 1;
-    min-width: 260px;
-  }
+  .footer-left { flex: 1; min-width: 260px; }
 
   .footer-right {
     text-align: right;
@@ -290,12 +298,13 @@
   }
 
   .deadline-note {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 0.82em;
     color: #888;
     font-style: italic;
-    line-height: 1.5;
-    max-width: 520px;
+    line-height: 1.55;
+    border-left: 2px solid #d4af37;
+    padding-left: 10px;
   }
 
   .contact-line {
@@ -312,62 +321,14 @@
     transition: color 0.3s;
   }
 
-  .contact-line a:hover {
-    color: #fff;
-    text-decoration: underline;
-  }
+  .contact-line a:hover { color: #fff; text-decoration: underline; }
 
-  .music-credits {
-    margin-top: 8px;
-    font-size: 0.9em;
-    color: #bfae6a;
-  }
-
+  .music-credits { margin-top: 8px; font-size: 0.9em; color: #bfae6a; }
   .music-credit { display: none; }
   .music-credit.active { display: block; }
   .music-credit a { color: #9f8f4f; text-decoration: none; }
   .music-credit a:hover { color: #d4af37; text-decoration: underline; }
 
-  /* ── MUSIC POPUP ── */
-  #music-popup {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    background: rgba(11,11,11,0.88);
-    border: 1px solid #d4af37;
-    padding: 6px 14px;
-    z-index: 10000;
-    text-align: center;
-    color: #9f8f4f;
-    font-size: 0.73em;
-    opacity: 1;
-    transition: opacity 1.5s ease;
-    white-space: nowrap;
-  }
-
-  #music-popup.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  #music-popup p { margin: 0; line-height: 1.4; }
-
-  /* ── STAR ACCENT ── */
-  .star-row {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 6px 0;
-    opacity: 0.55;
-  }
-
-  .star-row img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-  }
-
-  /* ── DISCLAIMER STRIP ── */
   .disclaimer-strip {
     font-size: 0.7em;
     color: #d4af37;
@@ -375,47 +336,48 @@
     line-height: 1.4;
   }
 
+  /* ── MUSIC POPUP ── */
+  #music-popup {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: rgba(11,11,11,0.92);
+    border: 1px solid #d4af37;
+    padding: 7px 16px;
+    z-index: 10000;
+    text-align: center;
+    color: #9f8f4f;
+    font-size: 0.75em;
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  #music-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #music-popup p { margin: 0; line-height: 1.5; }
+  #music-popup .popup-sub { font-size: 0.88em; color: #7a6e3f; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
-    .site-frame {
-      margin: 10px;
-      padding: 18px 16px;
-      border-width: 3px;
-    }
-
-    .cd-value {
-      width: 68px;
-      height: 62px;
-      font-size: 1.8em;
-    }
-
+    .site-frame { margin: 10px; padding: 18px 16px; border-width: 3px; }
+    .cd-value { width: 68px; height: 62px; font-size: 1.8em; }
     .cd-unit { min-width: 60px; }
     .cd-separator { font-size: 2em; }
-
-    .footer-inner {
-      flex-direction: column;
-      text-align: center;
-    }
-
+    .footer-inner { flex-direction: column; text-align: center; }
     .footer-right { text-align: center; }
-
-    .preview-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .preview-card {
-      max-width: 90%;
-    }
+    .deadline-note { border-left: none; border-top: 2px solid #d4af37; padding-left: 0; padding-top: 10px; }
+    .preview-grid { flex-direction: column; align-items: center; }
+    .preview-card { max-width: 90%; }
+    #music-popup { right: 8px; top: 8px; font-size: 0.68em; }
   }
 
   @media (max-width: 420px) {
-    .cd-value {
-      width: 58px;
-      height: 54px;
-      font-size: 1.5em;
-    }
-
+    .cd-value { width: 58px; height: 54px; font-size: 1.5em; }
     .countdown-wrap { gap: 10px; }
     .cd-separator { font-size: 1.6em; }
   }
@@ -425,9 +387,10 @@
 
 <div class="site-frame">
 
-  <!-- Music Popup -->
+  <!-- Music Popup Hint -->
   <div id="music-popup">
-    <p>Triple Click Anywhere &mdash; Audio Control</p>
+    <p>Click Anywhere To Start Music</p>
+    <p class="popup-sub">Triple-Click Anytime To Pause &amp; Resume</p>
   </div>
 
   <!-- Nav -->
@@ -445,20 +408,35 @@
 
   <!-- Hero -->
   <div class="hero">
+
+    <!-- Logo — same images/ folder as main site -->
     <div class="logo-box">
-      <img src="industrial-equipment-foods-logo.png" alt="Industrial Equipment & Foods Logo">
+      <img src="images/industrial-equipment-foods-logo.png" alt="Industrial Equipment &amp; Foods Logo">
     </div>
 
-    <div class="star-row">
-      <img src="1777960949821_image.png" alt="★">
-      <img src="1777960949821_image.png" alt="★">
-      <img src="1777960949821_image.png" alt="★">
+    <!-- Gold stars — fully inline SVG, no external file -->
+    <div class="star-row" aria-hidden="true">
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
     </div>
 
-    <h1 class="hero-headline">New Content — May 11th, 2026</h1>
+    <h1 class="hero-headline">New Content &mdash; May 11th, 2026</h1>
     <p class="hero-sub">The Gold Standard Is Being Refreshed &mdash; Stand By</p>
 
-    <!-- Countdown -->
+    <!-- Live Countdown -->
     <div class="countdown-wrap" id="countdown-wrap">
       <div class="cd-unit">
         <div class="cd-value" id="cd-days">--</div>
@@ -482,34 +460,47 @@
     </div>
 
     <div class="expired-text" id="expired-text">
-      The update is live — or arriving any moment now. Refresh shortly.
+      The update is live &mdash; or arriving any moment. Refresh shortly.
     </div>
 
-    <div class="star-row">
-      <img src="1777960949821_image.png" alt="★">
-      <img src="1777960949821_image.png" alt="★">
-      <img src="1777960949821_image.png" alt="★">
+    <div class="star-row" aria-hidden="true">
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
+      <svg class="gold-star" viewBox="0 0 52 50" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,3 32,19 49,19 36,30 41,47 26,36 11,47 16,30 3,19 20,19" fill="#d4af37" stroke="#8a6a00" stroke-width="1.5"/>
+      </svg>
     </div>
-  </div>
+
+  </div><!-- /hero -->
 
   <div class="gold-divider"></div>
 
   <!-- Product Preview -->
   <div class="preview-section">
     <h2 class="preview-title">Preview Before Update Is Complete</h2>
-    <p class="preview-note">A glimpse at what's coming — full site experience returns May 11th.</p>
+    <p class="preview-note">A glimpse at what&rsquo;s coming &mdash; full site experience returns May 11th.</p>
 
     <div class="preview-grid">
       <div class="preview-card">
-        <img src="ihg-original_2_.png" alt="Industrial Humanized Grease Advertisement" class="preview-img">
+        <img src="images/ihg-original.png" alt="Industrial Humanized Grease Advertisement" class="preview-img">
         <div class="preview-card-label">Industrial Humanized Grease (I.H.G.)</div>
       </div>
       <div class="preview-card">
-        <img src="ivf_2_.png" alt="Industrial Versatile Flavoring Advertisement" class="preview-img">
+        <img src="images/ivf.png" alt="Industrial Versatile Flavoring Advertisement" class="preview-img">
         <div class="preview-card-label">Industrial Versatile Flavoring (I.V.F.)</div>
       </div>
       <div class="preview-card">
-        <img src="iha_2_.png" alt="Industrial Human Adhesive Advertisement" class="preview-img">
+        <img src="images/iha.png" alt="Industrial Human Adhesive Advertisement" class="preview-img">
         <div class="preview-card-label">Industrial Human Adhesive (I.H.A.)</div>
       </div>
     </div>
@@ -521,7 +512,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-left">
-        <div>"Even over a century later, we never fail to innovate." &mdash; Industrial Equipment &amp; Foods LLC</div>
+        <div>&ldquo;Even over a century later, we never fail to innovate.&rdquo; &mdash; Industrial Equipment &amp; Foods LLC</div>
         <div class="disclaimer-strip">
           Disclaimer: This site is fictional and satirical. All characters, companies, and media are original or credited; any similarity to real people or organizations is coincidental.
         </div>
@@ -529,21 +520,29 @@
           Contact Us At: <a href="mailto:industrialfandeofficialllc@gmail.com">industrialfandeofficialllc@gmail.com</a>
         </div>
         <div class="deadline-note">
-          &#9432;&nbsp; <strong>Please Note:</strong> The May 11th deadline is an estimate and is not guaranteed to be exact.
+          <strong>Please Note:</strong> The May 11th deadline is an estimate and is not guaranteed to be exact.
           The updated site will go live within approximately one day before or after this date.
-          Thank you for your patience — the new version is worth the wait.
+          Thank you for your patience &mdash; the new version is worth the wait.
         </div>
       </div>
+
       <div class="footer-right">
         <div>Customer Delight Line : +1 (800) 444-1987</div>
-        <div style="color:#d4af37; margin-top:4px;">© 1897 – 2026 Industrial Foods &amp; Equipment LLC | All Rights Reserved</div>
+        <div style="color:#d4af37; margin-top:4px;">
+          &copy; 1897 &ndash; 2026 Industrial Foods &amp; Equipment LLC | All Rights Reserved
+        </div>
         <div class="music-credits">
           <div class="music-credit active" id="credit-1">
-            Music: "Falling" — Sappheiros &middot; <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
+            Music: &ldquo;Falling&rdquo; &mdash; Sappheiros &middot;
+            <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
           </div>
           <div class="music-credit" id="credit-2">
-            Music: "IT'S OKAY" — firefl!es &middot; <a href="https://youtu.be/K5hZqj8pY2Q" target="_blank" rel="noopener">CC BY 3.0</a>
+            Music: &ldquo;IT&rsquo;S OKAY&rdquo; &mdash; firefl!es &middot;
+            <a href="https://youtu.be/K5hZqj8pY2Q" target="_blank" rel="noopener">CC BY 3.0</a>
           </div>
+        </div>
+        <div style="font-size:0.75em; margin-top:4px;">
+          For informational purposes only. Industrial Foods &amp; Equipment LLC assumes no liability for use of products or technical specifications.
         </div>
       </div>
     </div>
@@ -552,154 +551,123 @@
 </div><!-- /site-frame -->
 
 <script>
-// ===== COUNTDOWN TIMER =====
-(function() {
-  // Deadline: May 11, 2026 at midnight local time
+// =====================================================================
+// COUNTDOWN
+// =====================================================================
+(function () {
   var deadline = new Date('2026-05-11T00:00:00');
 
-  function pad(n) {
-    return String(Math.max(0, n)).padStart(2, '0');
-  }
+  function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
 
   function tick() {
-    var now  = new Date();
-    var diff = deadline - now;
-
+    var diff = deadline - new Date();
     if (diff <= 0) {
-      // Show expired state
       document.getElementById('countdown-wrap').style.display = 'none';
-      document.getElementById('expired-text').style.display = 'block';
+      document.getElementById('expired-text').style.display  = 'block';
       return;
     }
-
-    var days  = Math.floor(diff / 86400000);
-    var hours = Math.floor((diff % 86400000) / 3600000);
-    var mins  = Math.floor((diff % 3600000)  / 60000);
-    var secs  = Math.floor((diff % 60000)    / 1000);
-
-    document.getElementById('cd-days').textContent  = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-mins').textContent  = pad(mins);
-    document.getElementById('cd-secs').textContent  = pad(secs);
+    document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000)  / 60000));
+    document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000)    / 1000));
   }
 
   tick();
   setInterval(tick, 1000);
 })();
 
-// ===== IMAGE FADE-IN ON SCROLL =====
-(function() {
+// =====================================================================
+// IMAGE FADE-IN ON SCROLL
+// =====================================================================
+(function () {
   var imgs = document.querySelectorAll('.preview-img');
   if (!imgs.length) return;
-
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
-
-  imgs.forEach(function(img) { observer.observe(img); });
+  imgs.forEach(function (img) { obs.observe(img); });
 })();
 
-// ===== MUSIC SYSTEM =====
-(function() {
+// =====================================================================
+// MUSIC PLAYER
+// Behaviour:
+//   • 1st click anywhere  → starts music + hides popup hint
+//   • Triple-click after  → toggles pause / resume
+// =====================================================================
+(function () {
   'use strict';
 
-  var MUSIC_VOLUME       = 0.3;
-  var CLICK_DELAY        = 300;
-  var TRIPLE_CLICK_WINDOW = 400;
-  var POPUP_AUTO_HIDE_DELAY = 10000;
+  var VOLUME          = 0.3;
+  var TRIPLE_WINDOW   = 400;   // ms to count 3 clicks
+  var POPUP_HIDE_DELAY = 12000; // auto-hide hint after 12 s
 
-  var musicStarted     = false;
-  var currentTrackIndex = 0;
-  var initialClickCount = 0;
-  var initialClickTimer = null;
-  var clickCount = 0;
-  var clickTimer = null;
+  var started      = false;
+  var currentIndex = 0;
+  var clickCount   = 0;
+  var clickTimer   = null;
 
-  // NOTE: sound files must sit in the same folder as this HTML file.
-  // File names match the uploaded files exactly.
-  var playlistData = [
-    {
-      audio: new Audio('[Non Copyrighted Music] Sappheiros - Falling.mp3'),
-      creditId: 'credit-1'
-    },
-    {
-      audio: new Audio("(Royalty Free Music) -IT'S OKAYByFirefl!es.mp3"),
-      creditId: 'credit-2'
-    }
+  // Paths mirror the main site's sounds/ folder exactly
+  var playlist = [
+    { audio: new Audio('sounds/[Non Copyrighted Music] Sappheiros - Falling.mp3'), creditId: 'credit-1' },
+    { audio: new Audio("sounds/(Royalty Free Music) -IT'S OKAYByFirefl!es.mp3"),   creditId: 'credit-2' }
   ];
 
-  playlistData.forEach(function(track) {
-    track.audio.volume = MUSIC_VOLUME;
-    track.audio.addEventListener('ended', function() {
-      currentTrackIndex = (currentTrackIndex + 1) % playlistData.length;
-      updateCredit();
-      playlistData[currentTrackIndex].audio.play();
+  playlist.forEach(function (track) {
+    track.audio.volume = VOLUME;
+    track.audio.addEventListener('ended', function () {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      showCredit(currentIndex);
+      playlist[currentIndex].audio.play().catch(function () {});
     });
   });
 
-  function updateCredit() {
-    document.querySelectorAll('.music-credit').forEach(function(el) {
-      el.classList.remove('active');
-    });
-    document.getElementById(playlistData[currentTrackIndex].creditId).classList.add('active');
+  function showCredit(i) {
+    document.querySelectorAll('.music-credit').forEach(function (el) { el.classList.remove('active'); });
+    var el = document.getElementById(playlist[i].creditId);
+    if (el) el.classList.add('active');
   }
 
   function hidePopup() {
-    document.getElementById('music-popup').classList.add('hidden');
+    var p = document.getElementById('music-popup');
+    if (p) p.classList.add('hidden');
   }
 
   function startMusic() {
-    if (!musicStarted) {
-      playlistData[currentTrackIndex].audio.play().catch(function(err) {
-        console.log('Audio playback prevented:', err);
-      });
-      musicStarted = true;
-      hidePopup();
-    }
+    started = true;
+    showCredit(currentIndex);
+    playlist[currentIndex].audio.play().catch(function (e) {
+      console.log('Audio blocked:', e);
+    });
+    hidePopup();
   }
 
-  function handleInitialClick() {
-    initialClickCount++;
-    clearTimeout(initialClickTimer);
+  function togglePause() {
+    var audio = playlist[currentIndex].audio;
+    audio.paused ? audio.play().catch(function () {}) : audio.pause();
+  }
 
-    if (initialClickCount === 1) {
-      initialClickTimer = setTimeout(function() {
-        if (initialClickCount === 1) { startMusic(); switchToNormalMode(); }
-        initialClickCount = 0;
-      }, CLICK_DELAY);
-    } else if (initialClickCount === 3) {
-      clearTimeout(initialClickTimer);
+  document.addEventListener('click', function () {
+    // ── First-ever click: just start music ──
+    if (!started) {
       startMusic();
-      switchToNormalMode();
-      initialClickCount = 0;
+      return; // don't begin triple-click count on this initial click
     }
-  }
 
-  function handleNormalClick() {
+    // ── After started: triple-click detection ──
     clickCount++;
     clearTimeout(clickTimer);
-    clickTimer = setTimeout(function() {
-      if (clickCount === 3) {
-        var currentAudio = playlistData[currentTrackIndex].audio;
-        currentAudio.paused ? currentAudio.play() : currentAudio.pause();
-      }
+    clickTimer = setTimeout(function () {
+      if (clickCount >= 3) togglePause();
       clickCount = 0;
-    }, TRIPLE_CLICK_WINDOW);
-  }
+    }, TRIPLE_WINDOW);
+  });
 
-  function switchToNormalMode() {
-    document.removeEventListener('click', handleInitialClick);
-    document.addEventListener('click', handleNormalClick);
-  }
+  // Auto-hide popup hint after delay
+  setTimeout(hidePopup, POPUP_HIDE_DELAY);
 
-  updateCredit();
-  document.addEventListener('click', handleInitialClick);
-  setTimeout(hidePopup, POPUP_AUTO_HIDE_DELAY);
+  showCredit(currentIndex);
 })();
 </script>
 
