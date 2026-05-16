@@ -1033,8 +1033,8 @@ if (getCookie("banned") === "true") {
 
     <div class="product">
       <div class="image-box">
-        <img class="ad-image clickable" id="ihg-img" src="images/ihg-original.png" alt="IHG Advertisement"
-             onerror="this.onerror=null;this.src='';this.alt='[ I.H.G. Image — add ihg-original.png to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;display:flex;align-items:center;'">
+        <img class="ad-image clickable" id="ihg-img" src="images/IHG_Original_.PNG" alt="IHG Advertisement"
+             onerror="this.onerror=null;this.src='';this.alt='[ I.H.G. Image — add IHG_Original_.PNG to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;display:flex;align-items:center;'">
       </div>
       <div class="text-box">
         <h2>Industrial Humanized Grease (I.H.G.)</h2>
@@ -1044,8 +1044,8 @@ if (getCookie("banned") === "true") {
 
     <div class="product reverse">
       <div class="image-box">
-        <img class="ad-image" src="images/ivf.png" alt="IVF Advertisement"
-             onerror="this.onerror=null;this.src='';this.alt='[ I.V.F. Image — add ivf.png to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;'">
+        <img class="ad-image" src="images/IVF.png" alt="IVF Advertisement"
+             onerror="this.onerror=null;this.src='';this.alt='[ I.V.F. Image — add IVF.png to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;'">
       </div>
       <div class="text-box">
         <h2>Industrial Versatile Flavoring (I.V.F.)</h2>
@@ -1055,8 +1055,8 @@ if (getCookie("banned") === "true") {
 
     <div class="product">
       <div class="image-box">
-        <img class="ad-image" src="images/iha.png" alt="IHA Advertisement"
-             onerror="this.onerror=null;this.src='';this.alt='[ I.H.A. Image — add iha.png to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;'">
+        <img class="ad-image" src="images/I_H_A.png" alt="IHA Advertisement"
+             onerror="this.onerror=null;this.src='';this.alt='[ I.H.A. Image — add I_H_A.png to images/ ]';this.style.cssText='opacity:1;padding:18px;border:1px dashed #d4af37;color:#d4af37;font-size:0.8em;background:#0b0b0b;min-height:80px;'">
       </div>
       <div class="text-box">
         <h2>Industrial Human Adhesive (I.H.A.)</h2>
@@ -1306,9 +1306,9 @@ function banUser() {
     const roll = Math.floor(Math.random() * 6); // 0–5, triggers on 0
     if (roll === 0) {
       const swaps = [
-        { normal: 'ihg-original.png',  alt: 'ihg-original(2).png' },
-        { normal: 'ivf.png',           alt: 'ivf(2).png' },
-        { normal: 'iha.png',           alt: 'iha(2).png' }
+        { normal: 'IHG_Original_.PNG',  alt: 'ihg-original_2_.png' },
+        { normal: 'IVF.png',            alt: 'ivf_2_.png' },
+        { normal: 'I_H_A.png',          alt: 'iha_2_.png' }
       ];
       document.querySelectorAll('.ad-image').forEach(img => {
         const src = img.src; // full URL string
